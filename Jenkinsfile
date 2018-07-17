@@ -33,7 +33,7 @@ node {
     archiveArtifacts artifacts: 'binaries/**', fingerprint: true
   }
 
-  stage("Publish to Artifactory") {
+  /*stage("Publish to Artifactory") {
     // create a Artifactory server reference with some credentials we stored in Jenkins already
     def server = Artifactory.newServer url: 'http://artifactory.example.com/artifactory', credentialsId: 'artifactory-credentials'
     // Upload spec is a definition for the Artifactory plugin to tell it how and what to upload, and where in Artifactory it should go
@@ -48,5 +48,5 @@ node {
     }"""
     // perform the upload
     server.upload(uploadSpec)
-  }
+  }*/
 }
