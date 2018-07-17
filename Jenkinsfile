@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
-options { buildDiscarder(logRotator(numToKeepStr: '3')) }
-
 // this will start an executor on a Jenkins agent with the docker label
 node {
+  properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10']]]);
+
   // Setup variables
   // application name will be used in a few places so create a variable and use string interpolation to use it where needed
   String applicationName = "basic-app"
