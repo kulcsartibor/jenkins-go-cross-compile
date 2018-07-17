@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
 
+options { buildDiscarder(logRotator(numToKeepStr: '3')) }
+
 // this will start an executor on a Jenkins agent with the docker label
 node {
   // Setup variables
